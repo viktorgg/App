@@ -1,0 +1,32 @@
+<%= form_with(model: subsuser, local: true) do |form| %>
+  <% if subsuser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subsuser.errors.count, "error") %> prohibited this subsuser from being saved:</h2>
+
+      <ul>
+      <% subsuser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.number_field :userid, id: :subsuser_userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subsid %>
+    <%= form.number_field :subsid, id: :subsuser_subsid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :subsuser_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
