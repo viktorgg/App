@@ -72,11 +72,3 @@ class SubsController < ApplicationController
       params.require(:sub).permit(:price)
     end
     
-    def validation
-    	errors.add("only 2 teachers and 10 students") if check
-    end
-    
-    def check
-    	# subusers.type
-    end
-end
